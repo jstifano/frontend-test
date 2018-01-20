@@ -1,0 +1,21 @@
+.buttons-box {
+	display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 15px;
+}
+
+.text-12 {
+	font-size: 20px;
+}
+
+.button-hover:hover {
+	color: blue;
+	cursor: pointer;
+}
+
+.border-bottom-box {
+	border-bottom: 5px solid #B5B5B5;
+	margin-top: 20px;
+}

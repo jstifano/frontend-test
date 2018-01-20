@@ -17,11 +17,11 @@ module.exports = (env) => {
   return {
 
     entry: { // Configuracion del archivo de entrada para la compilación.
-      "email-client": path.resolve(__dirname, 'app.js'),
+      "app": path.resolve(__dirname, 'src/entries/app.js'),
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'js/[name].[hash].js',
+      filename: 'js/[name].js',
       publicPath: path.resolve(__dirname, 'dist')+"/",
       chunkFilename: 'js/[id].[chunkhash].js',
     },
@@ -56,7 +56,7 @@ module.exports = (env) => {
           })
         },
         {
-          test: /\.(jpg|png|gif|svg)$/,
+          test: /\.(jpg|png|gif|svg|ttf|eot|woff)$/,
           use: {
             loader: 'url-loader',
             options: {
