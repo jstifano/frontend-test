@@ -1,0 +1,17 @@
+/* Wrapper para la imagen del email*/
+.envelope-box{
+	display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15em;
+}
+/* Wrapper para la imagen del email*/
+
+/* Estilo para la imagen del sobre del email */
+.envelope-style{
+	width: 300px;
+	height: 300px;
+	color: #B5B5B5;
+}
+/* Estilo para la imagen del sobre del email */
