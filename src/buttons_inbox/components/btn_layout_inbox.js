@@ -17,15 +17,15 @@ const ButtonsLayout = (props) => {
 			<div className="buttons-box">
 				<div className="button-hover">
 					<InboxButton></InboxButton>&nbsp;
-					<span className="text-12">Inbox</span>
+					<span className="button-hover text-12">Inbox</span>
 				</div>
 				<div className="button-hover">
-					<TrashButton></TrashButton>&nbsp;
-					<span className="text-12">Trash</span>
+					<TrashButton></TrashButton>
+					<span className="button-hover text-12">Trash</span>
 				</div>
 				<div className="button-hover">
 					<SpamButton></SpamButton>&nbsp;
-					<span className="text-12">Spam</span>
+					<span className="button-hover text-12">Spam</span>
 				</div>
 			</div>
 			<div className="border-bottom-box"></div>

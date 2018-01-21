@@ -1,21 +1,31 @@
+/* Box de los botones del menu izquierdo */
 .buttons-box {
+	position: relative;
 	display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 15px;
 }
+/* Box de los botones del menu izquierdo */
 
+/* Estilo para la letra de 12 pixeles */
 .text-12 {
-	font-size: 20px;
+	font-size: 12px;
+	color: #333333;
 }
+/* Estilo para la letra de 12 pixeles */
 
+/* Accion cuando se pasa el mouse por encima */
 .button-hover:hover {
-	color: blue;
+	color: #4990E2;
 	cursor: pointer;
 }
+/* Accion cuando se pasa el mouse por encima */
 
+/* Borde de 3 pixeles abajo del menu superior */
 .border-bottom-box {
-	border-bottom: 5px solid #B5B5B5;
+	border-bottom: 3px solid #B5B5B5;
 	margin-top: 20px;
 }
+/* Borde de 3 pixeles abajo del menu superior */

@@ -4,14 +4,13 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    margin-left: 15em;
 }
 /* Wrapper para la imagen del email*/
 
 /* Estilo para la imagen del sobre del email */
 .envelope-style{
-	width: 300px;
-	height: 300px;
+	width: 150px;
+	height: 150px;
 	color: #B5B5B5;
 }
 /* Estilo para la imagen del sobre del email */
