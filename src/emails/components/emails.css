@@ -64,23 +64,25 @@
 }
 
 /* Box flexible para el subject */
-.body-box{
+.body-emailbox{
     display: flex;
+    max-height: 18px;
 }
 /* Box flexible para el subject */
 
 /* Texto del contenido del email */
-.body-text{
+.body-text-emailbox{
 	font-size: 14px;
 	font-weight: normal;
 	color: #9B9B9B;
-	overflow: hidden;
-	text-overflow: ellipsis; /* Agrego puntos suspensivos*/
 	left: 10px;
     top: 20px;
     position: relative;
 }
 /* Texto del contenido del email */
+.body-text-emailbox::after{
+	content: ' . . .';
+}
 
 /* Circulo azul para el email nuevo en la bandeja */
 .blue-circle {
