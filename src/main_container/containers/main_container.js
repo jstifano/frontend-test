@@ -4,14 +4,16 @@ import React, { Component } from 'react'
 import MainLayout from '../components/main_layout'
 import EnvelopeLayout from '../../envelope/components/envelope_layout'
 import InboxLayout from '../../inbox/components/inbox_layout'
+import EmailContainer from '../../email_detail/containers/email_container'
 
 class MainContainer extends Component {
+	
 	render(){
 		return (
 			<MainLayout>
-				<InboxLayout>
-				</InboxLayout>
-				<EnvelopeLayout />
+				<InboxLayout data={this.props.data}>
+				</InboxLayout> 
+				{this.props.data.length > 0 ? <EmailContainer data={this.props.data}/>: <EnvelopeLayout />}
 			</MainLayout>
 		)	
 	}

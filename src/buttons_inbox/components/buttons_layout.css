@@ -13,6 +13,8 @@
 .text-12 {
 	font-size: 12px;
 	color: #333333;
+	position: relative;
+	left: 4px;
 }
 /* Estilo para la letra de 12 pixeles */
 
@@ -25,7 +27,7 @@
 
 /* Borde de 3 pixeles abajo del menu superior */
 .border-bottom-box {
-	border-bottom: 3px solid #B5B5B5;
+	border-bottom: 2px solid #B5B5B5;
 	margin-top: 20px;
 }
 /* Borde de 3 pixeles abajo del menu superior */

@@ -46,12 +46,15 @@
 }
 /* Caja flexible para el contenido del email */
 
+/* Estilo para la caja del titulo del email */
 .title-body{
 	display: flex;
 	flex: 1;
 	font-size: 16px;
 }
+/* Estilo para la caja del titulo del email */
 
+/* Estilo para la fecha del body del email */
 .date-body{
 	display: flex;
 	flex: 1;
@@ -59,9 +62,17 @@
 	font-size: 12px;
 	color: #9B9B9B;
 }
+/* Estilo para la fecha del body del email */
 
+/* Cuerpo del correo */
 .body-text-detail {
     padding: 20px;
     width: 106.5ex;
     font-size: 14px;
+}
+/* Cuerpo del correo */
+
+.highlight-button:hover {
+	color: #4990E2;
+	cursor: pointer;
 }

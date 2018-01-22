@@ -31,7 +31,6 @@ const EmailLayout = (props) => {
 					El body del email
 				</div>
 			</div>
-
 		</div>
 	)
 }

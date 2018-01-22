@@ -13,13 +13,13 @@ const EmailDetailLayout = (props) => {
 				Aqui estará el titulo
 				<div className="box-buttons">
 					<div className="buttons-wrapper">
-						<div style={{cursor: 'pointer'}}>
+						<div className="highlight-button">
 							<UnreadButton width={19} height={19}/>
 						</div>
-						<div style={{cursor: 'pointer'}}>
+						<div className="highlight-button">
 							<TrashButton width={19} height={19}/>
 						</div>
-						<div style={{cursor: 'pointer'}}>
+						<div className="highlight-button">
 							<SpamButton width={19} height={19}/>
 						</div>
 					</div>

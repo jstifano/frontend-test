@@ -11,8 +11,8 @@ import FaListAlt from 'react-icons/lib/fa/list-alt'
 const SpamButton = (props) => {
 	return (
 		<FaListAlt 
-			width={15}
-			height={15}
+			width={props.width}
+			height={props.height}
 		>
 		</FaListAlt>
 	)
