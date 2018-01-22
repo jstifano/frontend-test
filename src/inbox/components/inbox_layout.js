@@ -5,7 +5,7 @@ import './inbox.css'
 const InboxLayout = (props) => {
 	return (
 		<div className="inbox-container">
-			<ButtonsContainer />
+			<ButtonsContainer data={props.data}/>
 		</div>
 	)
 }
