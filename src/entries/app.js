@@ -10,10 +10,10 @@ const initialState = data; // Guardo info inicial en el store
 
 // Creo el store de Redux
 const store = createStore(
-	() => {},
+	(state) => state,
 	initialState,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), // Dev tool de Redux
 )
 
-render(<MainContainer data={data}/>, App);
+render(<MainContainer data={store.getState()}/>, App);
 
