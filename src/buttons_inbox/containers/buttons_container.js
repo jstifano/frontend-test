@@ -31,11 +31,10 @@ class ButtonsContainer extends Component{
 					</div>
 				</div>
 				<div className="border-bottom-box"></div>
-				<EmailLayout />
+				<EmailLayout data={this.props.data}/>
 			</div>
 		)
-	}
-	
+	}	
 }
 
 export default ButtonsContainer
