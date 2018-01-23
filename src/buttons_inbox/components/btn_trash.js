@@ -10,11 +10,13 @@ import FaTrashO from 'react-icons/lib/fa/trash-o'
 
 const TrashButton = (props) => {
 	return (
-		<FaTrashO 
-			width={props.width}
-			height={props.height}
-		>
-		</FaTrashO>
+		<div>
+			<FaTrashO 
+				width={props.width}
+				height={props.height}
+			>
+			</FaTrashO>
+		</div>
 	)
 }
 

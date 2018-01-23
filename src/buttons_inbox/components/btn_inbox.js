@@ -10,11 +10,13 @@ import FaInbox from 'react-icons/lib/fa/inbox'
 
 const InboxButton = (props) => {
 	return (
-		<FaInbox 
-			width={props.width}
-			height={props.height}
-		>
-		</FaInbox>
+		<div>	
+			<FaInbox 
+				width={props.width}
+				height={props.height}
+			>
+			</FaInbox>
+		</div>
 	)
 }
 

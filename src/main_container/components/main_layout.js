@@ -5,7 +5,7 @@
 * @author     :: Javier Stifano <jstifano18@gmail.com> *
 ********************************************************/
 import React from 'react'
-import './main_layout.css'
+import './main_layout.sass'
 
 const MainLayout = (props) => {
 	return (

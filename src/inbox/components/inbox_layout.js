@@ -1,6 +1,6 @@
 import React from 'react'
 import ButtonsContainer from '../../buttons_inbox/containers/buttons_container'
-import './inbox.css'
+import './inbox.sass'
 
 const InboxLayout = (props) => {
 	return (
