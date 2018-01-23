@@ -12,7 +12,7 @@ class MainContainer extends Component {
 			<MainLayout>
 				<InboxLayout data={this.props.data}>
 				</InboxLayout> 
-				{this.props.data.length == 0 ? <EnvelopeLayout /> : ''}
+				{this.props.data.length > 0 ? <EnvelopeLayout /> : ''}
 			</MainLayout>
 		)	
 	}
