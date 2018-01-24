@@ -6,7 +6,6 @@ import EnvelopeLayout from '../../envelope/components/envelope_layout'
 import InboxLayout from '../../inbox/components/inbox_layout'
 
 class MainContainer extends Component {
-	
 	render(){
 		return (
 			<MainLayout>

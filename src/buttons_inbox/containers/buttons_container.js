@@ -10,24 +10,24 @@ import InboxButton from '../components/btn_inbox'
 import TrashButton from '../components/btn_trash'
 import SpamButton from '../components/btn_spam'
 import EmailContainer from '../../emails/containers/email_container'
-import '../components/buttons_layout.sass'
+import '../../partials/_buttons-layout.sass'
 
 class ButtonsContainer extends Component{
 	render(){
 		return (
 			<div>
-				<div className="buttons-box" style={{alignItems: 'center', justifyContent: 'space-evenly', top: '10px'}}>
-					<div style={{display: 'flex', cursor: 'pointer'}}>
+				<div className="buttons-box" style={{alignItems: 'center', justifyContent: 'space-evenly'}}>
+					<div className="button-activated">
 						<InboxButton/>
-						<span className="text-12" style={{top: '3px'}}>Inbox</span>
+						<div className="text-12">Inbox</div>
 					</div>
-					<div style={{display: 'flex', cursor: 'pointer'}}>
+					<div className="button-activated">
 						<TrashButton />
-						<span className="text-12" style={{top: '3px'}}>Trash</span>
+						<span className="text-12">Trash</span>
 					</div>
-					<div style={{display: 'flex', cursor: 'pointer'}}>
+					<div className="button-activated">
 						<SpamButton />
-						<span className="text-12" style={{top: '3px'}}>Spam</span>
+						<span className="text-12">Spam</span>
 					</div>
 				</div>
 				<div className="border-bottom-box"></div>

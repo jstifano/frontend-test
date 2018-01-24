@@ -7,7 +7,7 @@
 
 import React from 'react'
 import FaEnvelopeO from 'react-icons/lib/fa/envelope-o'
-import './envelope.sass'
+import '../../partials/_envelope.sass'
 
 const EnvelopeLayout = (props) => {
 	return (

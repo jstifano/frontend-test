@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FaUser from 'react-icons/lib/fa/user'
-import './emails.sass'
+import '../../partials/_emails.sass'
 
 const Email = (props) => {
 
@@ -9,7 +9,7 @@ const Email = (props) => {
 		{
 			props.data.map((item) => {
 				return (
-				<div className="email-container" key={item.id} onClick={props.handleClick}>
+				<div className="email-container" key={item.id}>
 					<div className="header-email">
 						<div className="sender">
 							<FaUser 
