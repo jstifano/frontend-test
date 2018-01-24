@@ -7,11 +7,11 @@
 
 import React from 'react'
 import FaEnvelopeO from 'react-icons/lib/fa/envelope-o'
-import './envelope.css'
+import '../../partials/_envelope.sass'
 
 const EnvelopeLayout = (props) => {
 	return (
-		<div className="envelope-box">
+		<div className="envelope-box" style={{alignItems: 'center', justifyContent: 'center', 'flex': 1}}>
 			<FaEnvelopeO className="envelope-style"/>
 		</div>
 	)

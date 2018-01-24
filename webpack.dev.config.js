@@ -41,6 +41,10 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.sass$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
     ]
   }
 }
