@@ -6,15 +6,17 @@
 *****************************************************************/
 
 import React from 'react'
-import FaListAlt from 'react-icons/lib/fa/list-alt'
+import FaBug from 'react-icons/lib/fa/bug'
 
 const SpamButton = (props) => {
 	return (
-		<FaListAlt 
-			width={props.width}
-			height={props.height}
-		>
-		</FaListAlt>
+		<div>
+			<FaBug 
+				width={props.width}
+				height={props.height}
+			>
+			</FaBug>
+		</div>
 	)
 }
 

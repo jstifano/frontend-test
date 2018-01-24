@@ -2,7 +2,7 @@ import React from 'react'
 import UnreadButton from '../../buttons_inbox/components/btn_unread'
 import TrashButton from '../../buttons_inbox/components/btn_trash'
 import SpamButton from '../../buttons_inbox/components/btn_spam'
-import './email_detail.css'
+import '../../partials/_email-detail.sass'
 
 const EmailDetailLayout = (props) => {
 	const correo = '<noreply@gmail.com>'
