@@ -1,19 +1,35 @@
+/*******************************************************
+* Componente :: App Container (Smart Component)        *
+*                                                      *
+* Descripción :: Componente padre de toda la App       *
+* @author     :: Javier Stifano <jstifano18@gmail.com> *
+********************************************************/
+
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux' // Store para la data del App.
 
 // Componentes utilizados
 import MainContainer from '../main_container/containers/main_container'
-import data from '../mail-data.json'
+import apiJSON from '../mail-data.json'
 
-const initialState = data; // Guardo info inicial en el store
+// Redux 
+import { createStore } from 'redux' // Store para la data del App.
+import { Provider } from 'react-redux' // Decorador para extender las propiedas a los componentes hijos
+import reducer from '../reducers/data' 
+
+// Guardo info inicial en el store
+const initialState = apiJSON;
 
 // Creo el store de Redux
 const store = createStore(
-	(state) => state,
+	reducer,
 	initialState,
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), // Dev tool de Redux
 )
 
-render(<MainContainer data={store.getState()}/>, App);
+render(
+	<Provider store={store}>
+		<MainContainer/>
+	</Provider>
+, App);
 
