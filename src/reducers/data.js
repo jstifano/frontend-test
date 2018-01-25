@@ -24,6 +24,18 @@ const reducer = (state, action) => {
 				return email // Retorno el estado de ese objeto cambiado
 			})
 		}
+		case 'MARK_AS_UNREAD': {
+			return state.map((email, index) => {
+				if(index == action.payload.query.id){
+					// Copio el objeto antes de mutarlo y cambio el state
+					return Object.assign({}, email, {
+						isReaded: false, 
+						activated: true
+					})
+				}
+				return email // Retorno el objeto con su mismo estado
+			})
+		}
 		default: 
 			return state
 	}
