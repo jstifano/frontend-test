@@ -1,15 +1,16 @@
 /****************************************************************
-* Componente :: ButtonsLayout (Dumb Component)                  *
+* Componente  :: ButtonsLayout (Dumb Component)                 *
 *                                                               *
 * Descripción :: Wrapper principal los botones del inbox        *
 * @author     :: Javier Stifano <jstifano18@gmail.com>          *
 *****************************************************************/
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import InboxButton from '../components/btn_inbox'
 import TrashButton from '../components/btn_trash'
 import SpamButton from '../components/btn_spam'
-import EmailContainer from '../../emails/containers/email_container'
+import EmailLayout from '../../emails/components/emails_layout'
 import '../../partials/_buttons-layout.sass'
 
 class ButtonsContainer extends Component{
@@ -31,7 +32,7 @@ class ButtonsContainer extends Component{
 					</div>
 				</div>
 				<div className="border-bottom-box"></div>
-				<EmailContainer data={this.props.data}/>
+				<EmailLayout data={this.props.data} handleReaded={this.props.handleReaded}/>
 			</div>
 		)
 	}	
