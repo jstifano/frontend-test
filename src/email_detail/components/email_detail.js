@@ -17,10 +17,9 @@ const EmailDetailLayout = (props) => {
 	return (
 		<div style={{display: 'flex', flex: 1}}>
 			{
-				props.data.map((email) => {
-					if(email.activated){	
-						return <Detail key={email.id} email={email} handleUnread={props.handleUnread}/>
-					}
+				props.emails.map((email) => {	
+					if(email.activated)
+						return <Detail key={email.id} email={email} emails={props.emails} handleUnread={props.handleUnread}/>
 				})
 			}
 		</div>

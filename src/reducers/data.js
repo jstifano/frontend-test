@@ -8,9 +8,14 @@
 const reducer = (state, action) => {
 	switch(action.type){
 		case 'READ_EMAIL': {
-			return state.map((email, index) => {
+			let results = {
+				data: {
+					emails: ''
+				}
+			}
+			results.data.emails = state.data.emails.map((email, index) => {
 				if(index == action.payload.query.id){
-					// Copio el objeto antes de mutarlo
+					// Copio el objeto antes de mutarlo y cambio el state
 					return Object.assign({}, email, {
 						isReaded: true, 
 						activated: true
@@ -18,14 +23,14 @@ const reducer = (state, action) => {
 				}
 				else {
 					return Object.assign({}, email, { 
-						activated: false // Desactivo la lectura del mensaje
+						activated: false
 					})
-				}
-				return email // Retorno el estado de ese objeto cambiado
+				} // Retorno el objeto con su mismo estado
 			})
+			return results
 		}
 		case 'MARK_AS_UNREAD': {
-			return state.map((email, index) => {
+			state.data.emails.map((email, index) => {
 				if(index == action.payload.query.id){
 					// Copio el objeto antes de mutarlo y cambio el state
 					return Object.assign({}, email, {
@@ -35,6 +40,23 @@ const reducer = (state, action) => {
 				}
 				return email // Retorno el objeto con su mismo estado
 			})
+			return {
+				...state
+			}
+		}
+		case 'GET_INBOX_MESSAGES': {
+			let results = []
+			const list = state.data
+			results = list.filter((email) => !email.isSpam && !email.isErased)
+			return {
+				...state,
+				search: results
+			}
+
+		}	
+		case 'GET_ERASED_MESSAGES': {
+		}
+		case 'GET_SPAM_MESSAGES': {
 		}
 		default: 
 			return state

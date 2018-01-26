@@ -12,8 +12,12 @@ const EmailLayout = (props) => {
 	return (
 		<div>
 			{
-				props.data.map((item) => {
-					return <Email key={item.id} email={item} emails={props.emails} handleReaded={props.handleReaded}/>
+				props.emails.map((item) => {
+					return <Email 
+								key={item.id} 
+								email={item} 
+								handleReaded={props.handleReaded}
+							/>
 				})
 			}
 		</div>

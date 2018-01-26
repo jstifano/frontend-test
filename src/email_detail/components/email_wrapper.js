@@ -3,7 +3,7 @@ import EmailDetailLayout from '../components/email_detail'
 
 const EmailDetail = (props) => {
 	return (
-		<EmailDetailLayout data={props.data} handleUnread={props.handleUnread}/>
+		<EmailDetailLayout emails={props.emails} handleUnread={props.handleUnread}/>
 	)
 }
 

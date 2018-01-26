@@ -15,17 +15,18 @@ import InboxLayout from '../../inbox/components/inbox_layout'
 import EmailDetail from '../../email_detail/components/email_wrapper'
 
 class MainContainer extends Component {	
-	emptyBox = true; // Estado para en el envelope
+	emptyBox = true // Estado para en el envelope
 
 	// Manejo el click de los emails desde el contenedor padre
 	handleReaded = (email) => {
+		this.emptyBox = false
+
 		this.props.dispatch({
 			type: 'READ_EMAIL',
 			payload: {
 				query: email,
 			}
 		})
-		this.emptyBox = false
 	}
 
 	// Funcion para marcar como "No leido el correo"
@@ -38,29 +39,53 @@ class MainContainer extends Component {
 		})
 	}
 
+	// Manejo el buzon de los mensajes eliminados
+	handleInboxMessages = () => {
+		this.props.dispatch({
+			type: 'GET_INBOX_MESSAGES',
+		})
+		this.emptyBox = false
+	}
+
+	// Manejo el buzon de los mensajes eliminados
+	handleErasedMessages = () => {
+		this.props.dispatch({
+			type: 'GET_ERASED_MESSAGES',
+		})
+		this.emptyBox = false
+	}
+
+	// Manejo el buzon de los mensajes de spam
+	handleSpamMessages = () => {
+		this.props.dispatch({
+			type: 'GET_SPAM_MESSAGES',
+		})
+		this.emptyBox = false
+	}
+
 	render(){
 		return (
 			<MainLayout>
 				<InboxLayout 
-					data={this.props.data}
+					emails={this.props.emails}
 					handleReaded={this.handleReaded}
+					handleInboxMessages={this.handleInboxMessages}
+					handleErasedMessages={this.handleErasedMessages}
+					handleSpamMessages={this.handleErasedMessages}
 				>
 				</InboxLayout> 
-				{ this.emptyBox ? <EnvelopeLayout /> : ''}
-				{ this.props.data.length > 0 && !this.emptyBox ? 
-					<EmailDetail 
-						data={this.props.data}
-						handleUnread={this.handleUnread} 
-					/>: '' 
+				{ this.props.emails.length == 0 || this.emptyBox ? 
+					<EnvelopeLayout /> : 
+					<EmailDetail emails={this.props.emails} handleUnread={this.handleUnread} /> 
 				}
 			</MainLayout>
 		)	
 	}
 }
 
-function mapStateToProps(state, props){
+const mapStateToProps = (state, props) => {
 	return {
-		data: state // Estado con el arreglo de correos del store
+		emails: state.data.emails
 	}
 }
 

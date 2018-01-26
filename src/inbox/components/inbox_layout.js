@@ -12,7 +12,13 @@ import '../../partials/_inbox.sass'
 const InboxLayout = (props) => {
 	return (
 		<div className="inbox-container">
-			<ButtonsContainer data={props.data} handleReaded={props.handleReaded}/>
+			<ButtonsContainer 
+				emails={props.emails} 
+				handleReaded={props.handleReaded}
+				handleInboxMessages={props.handleInboxMessages}
+				handleErasedMessages={props.handleErasedMessages}
+				handleSpamMessages={props.handleSpamMessages}
+			/>
 		</div>
 	)
 }
