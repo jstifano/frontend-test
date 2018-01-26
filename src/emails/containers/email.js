@@ -33,8 +33,13 @@ class Email extends Component {
 					</div>
 				</div>
 				<div className="subject-box">
-					{!this.props.email.isReaded 
+					{
+						this.props.email.isReaded 
 						? 
+						<div className="subject">
+							{this.props.email.subject}
+						</div>
+						: 
 						<div style={{display: 'flex'}}>	
 							<div style={{
 								backgroundColor: '#4990E2',
@@ -50,10 +55,6 @@ class Email extends Component {
 								{this.props.email.subject}
 							</div>
 						</div>
-						: 
-						<div className="subject">
-							{this.props.email.subject}
-						</div>
 					}	
 				</div>
 				<div className="body-emailbox">
@@ -66,4 +67,4 @@ class Email extends Component {
 	}	
 }
 
-export default Email
+export default connect()(Email)

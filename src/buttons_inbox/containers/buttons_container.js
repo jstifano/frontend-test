@@ -59,8 +59,10 @@ class ButtonsContainer extends Component{
 					</div>
 				</div>
 				<div className="border-bottom-box"></div>
-				<EmailLayout 
-					emails={this.props.emails} 
+				<EmailLayout
+					typeBox={this.checkCss} 
+					emails={this.props.emails}
+					search={this.props.search}
 					handleReaded={this.props.handleReaded}
 				/>
 			</div>
@@ -68,4 +70,4 @@ class ButtonsContainer extends Component{
 	}	
 }
 
-export default ButtonsContainer
+export default connect()(ButtonsContainer)

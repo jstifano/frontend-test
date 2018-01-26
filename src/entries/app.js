@@ -21,7 +21,8 @@ import reducer from '../reducers/data'
 const initialState = {
 	data: {
 		...apiJSON, 
-	}
+	},
+	search: []
 }
 
 // Creo el store de Redux

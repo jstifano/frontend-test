@@ -10,6 +10,14 @@ class Detail extends Component {
 		this.props.handleUnread(this.props.email)
 	}
 
+	markAsErased = () => {
+		this.props.handleDelete(this.props.email)
+	}
+
+	markAsSpam = () => {
+		this.props.handleSpam(this.props.email)
+	}
+
 	render(){
 		return (
 			<div className="box-email-detail">
@@ -20,10 +28,10 @@ class Detail extends Component {
 							<div className="highlight-button" onClick={this.markAsUnread}>
 								<UnreadButton width={19} height={19}/>
 							</div>
-							<div className="highlight-button">
+							<div className="highlight-button" onClick={this.markAsErased}>
 								<TrashButton width={19} height={19}/>
 							</div>
-							<div className="highlight-button">
+							<div className="highlight-button" onClick={this.markAsSpam}>
 								<SpamButton width={19} height={19}/>
 							</div>
 						</div>

@@ -13,7 +13,8 @@ const InboxLayout = (props) => {
 	return (
 		<div className="inbox-container">
 			<ButtonsContainer 
-				emails={props.emails} 
+				emails={props.emails}
+				search={props.search}
 				handleReaded={props.handleReaded}
 				handleInboxMessages={props.handleInboxMessages}
 				handleErasedMessages={props.handleErasedMessages}

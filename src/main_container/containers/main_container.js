@@ -20,6 +20,9 @@ class MainContainer extends Component {
 	// Manejo el click de los emails desde el contenedor padre
 	handleReaded = (email) => {
 		this.emptyBox = false
+		
+		email.isReaded = true
+		email.activated = true
 
 		this.props.dispatch({
 			type: 'READ_EMAIL',
@@ -31,6 +34,7 @@ class MainContainer extends Component {
 
 	// Funcion para marcar como "No leido el correo"
 	handleUnread = (email) => {
+		this.emptyBox = true
 		this.props.dispatch({
 			type: 'MARK_AS_UNREAD',
 			payload: {
@@ -39,28 +43,50 @@ class MainContainer extends Component {
 		})
 	}
 
+	// Funcion para marcar como "No leido el correo"
+	handleDelete = (email) => {
+		this.emptyBox = true
+		this.props.dispatch({
+			type: 'MARK_AS_TRASH',
+			payload: {
+				query: email,
+			}
+		})
+	}
+
+	// Funcion para marcar como "No leido el correo"
+	handleSpam = (email) => {
+		this.emptyBox = true
+		this.props.dispatch({
+			type: 'MARK_AS_SPAM',
+			payload: {
+				query: email,
+			}
+		})
+	}
+
 	// Manejo el buzon de los mensajes eliminados
 	handleInboxMessages = () => {
+		this.emptyBox = true
 		this.props.dispatch({
 			type: 'GET_INBOX_MESSAGES',
 		})
-		this.emptyBox = false
 	}
 
 	// Manejo el buzon de los mensajes eliminados
 	handleErasedMessages = () => {
+		this.emptyBox = true
 		this.props.dispatch({
 			type: 'GET_ERASED_MESSAGES',
 		})
-		this.emptyBox = false
 	}
 
 	// Manejo el buzon de los mensajes de spam
 	handleSpamMessages = () => {
+		this.emptyBox = true
 		this.props.dispatch({
 			type: 'GET_SPAM_MESSAGES',
 		})
-		this.emptyBox = false
 	}
 
 	render(){
@@ -68,15 +94,22 @@ class MainContainer extends Component {
 			<MainLayout>
 				<InboxLayout 
 					emails={this.props.emails}
+					search={this.props.search}
 					handleReaded={this.handleReaded}
 					handleInboxMessages={this.handleInboxMessages}
 					handleErasedMessages={this.handleErasedMessages}
-					handleSpamMessages={this.handleErasedMessages}
+					handleSpamMessages={this.handleSpamMessages}
 				>
 				</InboxLayout> 
 				{ this.props.emails.length == 0 || this.emptyBox ? 
 					<EnvelopeLayout /> : 
-					<EmailDetail emails={this.props.emails} handleUnread={this.handleUnread} /> 
+					<EmailDetail 
+						emails={this.props.emails} 
+						search={this.props.search}
+						handleUnread={this.handleUnread}
+						handleDelete={this.handleDelete}
+						handleSpam={this.handleSpam} 
+					/> 
 				}
 			</MainLayout>
 		)	
@@ -85,7 +118,8 @@ class MainContainer extends Component {
 
 const mapStateToProps = (state, props) => {
 	return {
-		emails: state.data.emails
+		emails: state.data.emails,
+		search: state.search
 	}
 }
 

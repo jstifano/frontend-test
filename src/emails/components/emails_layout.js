@@ -12,13 +12,12 @@ const EmailLayout = (props) => {
 	return (
 		<div>
 			{
-				props.emails.map((item) => {
-					return <Email 
-								key={item.id} 
-								email={item} 
-								handleReaded={props.handleReaded}
-							/>
-				})
+				props.search.length == 0 ? 
+					null:
+					props.search.map((item) => {
+						return <Email key={item.id} email={item} handleReaded={props.handleReaded} />
+					})
+					
 			}
 		</div>
 	)
