@@ -18,7 +18,12 @@ import { Provider } from 'react-redux' // Decorador para extender las propiedas 
 import reducer from '../reducers/data' 
 
 // Guardo info inicial en el store
-const initialState = apiJSON;
+const initialState = {
+	data: {
+		...apiJSON, 
+	},
+	search: []
+}
 
 // Creo el store de Redux
 const store = createStore(
