@@ -1,7 +1,7 @@
 {
 	"emails":[
 		{
-		 "id": "0",
+		 "id": 0,
 		 "from":"mhallatt0@walmart.com",
 		 "to":"cziem0@surveymonkey.com",
 		 "subject":"Office Assistant IV",
@@ -21,7 +21,7 @@
 		 ]
 		},
 		{
-			"id": "1", 
+			"id": 1, 
 			"from":"nmulbery1@seattletimes.com",
 			"to":"idimont1@usa.gov",
 			"subject":"Technical Writer",

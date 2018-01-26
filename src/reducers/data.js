@@ -7,6 +7,19 @@
 
 const reducer = (state, action) => {
 	switch(action.type){
+		case 'ADD_EMAIL': {
+			let results = {
+				data: {
+					emails: []
+				},
+				search: []
+			}
+			return {
+				...state,
+				search: [...state.search, action.payload.query]
+			}
+			
+		}
 		case 'READ_EMAIL': {
 			let results = {
 				data: {
